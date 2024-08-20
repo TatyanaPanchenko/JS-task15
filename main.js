@@ -1,4 +1,7 @@
-import { form, input, videoInner, previewInner } from "./vars.js";
+const form = document.querySelector("form");
+const input = document.querySelector("input");
+const videoInner = document.querySelector(".video-inner");
+const previewInner = document.querySelector(".preview-inner");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -15,6 +18,9 @@ const getRequest = (value) => {
     .then((data) => {
       renderVideo(data.items[0]);
       renderScreen(data.items);
+    })
+    .catch(() => {
+      videoInner.innerHTML = "Error";
     });
 };
 const renderVideo = (item) => {

@@ -1,4 +1,4 @@
-import { form, input, videoInner, previewInner } from "./vars";
+import { form, input, videoInner, previewInner } from "./vars.js";
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
